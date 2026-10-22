@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, use } from 'react';
-import { initialSongs } from '@/data/songs';
-import { transposeChord } from '@/lib/transpose';
+import { initialSongs } from '../../data/songs';
+import { transposeChord } from '../../lib/transpose';
 
 export default function SongPage({ params }: { params: Promise<{ songId: string }> }) {
   const resolvedParams = use(params);
@@ -108,7 +108,7 @@ export default function SongPage({ params }: { params: Promise<{ songId: string 
                </div>
             </div>
 
-            <h3 className="text-lg font-semibold mb-4 text-gray-400 uppercase" style={{fontSize: '1.125rem', fontWeight: '600', color: '#9ca3af', marginBottom: '1rem', textTransform: 'uppercase'}}>Lyrics & Chords</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-400 uppercase" style={{fontSize: '1.125rem', fontWeight: '600', color: '#9ca3af', marginBottom: '1rem', textTransform: 'uppercase'}} className="no-print">Lyrics & Chords</h3>
             <div
               className="chord-text"
               style={{ fontSize: `${fontSize}px` }}

@@ -1,14 +1,23 @@
 'use client';
-import React, { useState } from 'react';
-import { initialSongs } from '@/data/songs';
+import React, { useState, useEffect } from 'react';
+import { initialSongs } from '../data/songs';
 
 export default function HomePage() {
   const [search, setSearch] = useState('');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredSongs = initialSongs.filter(song =>
     song.title.toLowerCase().includes(search.toLowerCase()) ||
     song.artist.toLowerCase().includes(search.toLowerCase())
   );
+
+  if (!mounted) {
+    return <div className="min-h-screen bg-gray-50 p-8">Loading library...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
