@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, use } from 'react';
 
-// --- SELF-CONTAINED DATA (No imports, no 404s!) ---
+// --- SELF-CONTAINED DATA ---
 const initialSongs = [
   {
     id: 'way-maker',
@@ -80,7 +80,6 @@ const initialSongs = [
   }
 ];
 
-// --- SELF-CONTAINED UTILITY ---
 const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
 function transposeChord(chord: string, semitones: number): string {
